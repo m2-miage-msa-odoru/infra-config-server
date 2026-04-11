@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${CONFIG_GIT_URI:https://github.com/m2-miage-msa-odoru/config.git}
+          search-paths: ${CONFIG_SEARCH_PATHS:config-repo}
+          default-label: ${CONFIG_GIT_BRANCH:main}
+          clone-on-start: true
+          # Si repo privé :
+          username: ${CONFIG_GIT_USERNAME:}
+          password: ${CONFIG_GIT_PASSWORD:}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
