@@ -12,7 +12,7 @@ spring:
           search-paths: ${CONFIG_SEARCH_PATHS:config-repo}
           default-label: ${CONFIG_GIT_BRANCH:main}
           clone-on-start: true
-          # Si repo privé :
+          # Pour un repot privé :
           username: ${CONFIG_GIT_USERNAME:}
           password: ${CONFIG_GIT_PASSWORD:}
 
