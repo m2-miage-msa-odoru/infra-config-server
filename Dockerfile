@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Copie du POM et téléchargement des dépendances
 COPY pom.xml .
-RUN mvn dependency:go-offline -q
+RUN mvn dependency:resolve -q
 
 # Copie du code source et build
 COPY src ./src
@@ -23,6 +23,9 @@ WORKDIR /app
 LABEL maintainer="fello.miage" \
       service="config-server" \
       version="0.0.1-SNAPSHOT"
+
+# Installation de curl pour le healthcheck
+RUN apk add --no-cache curl
 
 # Création d'un utilisateur non-root pour la sécurité
 RUN addgroup -S odoru && \

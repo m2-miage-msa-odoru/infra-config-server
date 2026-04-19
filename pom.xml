@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	<groupId>fello.miage</groupId>
-	<artifactId>appServerConfig</artifactId>
+	<artifactId>infra-server-config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>appConfig-server</name>
 	<description>Server de configurations </description>
